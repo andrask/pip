@@ -677,7 +677,7 @@ class WheelBuilder(object):
         spin_message = 'Running setup.py bdist_wheel for %s' % (req.name,)
         with open_spinner(spin_message) as spinner:
             logger.debug('Destination directory: %s', tempd)
-            wheel_args = base_args + ['bdist_wheel', '-d', tempd] \
+            wheel_args = base_args + ['bdist_wheel', '--dist-dir', tempd] \
                 + self.build_options
 
             if python_tag is not None:
